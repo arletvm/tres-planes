@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Flexbox (Planes)</title>
+
+    <style>
+        body {
+            height: 100vh;
+            background-color: blue;
+        }
+        #planes {
+            border: 2px solid white;
+            height: 80%;
+            display: flex;
+            padding: 20px;
+            justify-content: space-around; /*distibuye el espacio porque nos obra 10%*/
+        }
+        #planes h2 {
+            color: blue;
+        }
+        .plan {
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+            width: 30%;
+        }
+        h1 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        .precio {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: italic;
+        }
+        .plan a {
+            text-decoration: none;
+            color: blue;
+            border: 2px solid blue;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .plan a:hover {
+            color: white;
+            background-color: blue;
+            font-weight: bold;
+        }
+        @media (max-width:600px) { /*movil*/
+            body {
+                background-color: red;
+            }
+            #planes {
+                display: block;        
+            }
+            .plan {
+                width: 90%;
+                height: auto;
+                margin: auto;
+                padding-bottom: 15px; /*con esto tomamos el cuenta el botón*/
+            }
+        }
+        @media (min-width:601px) and (max-width:780px) { /*tablet*/
+            body {
+                background-color: greenyellow;
+            }
+            #planes {
+                flex-wrap: wrap;
+            }
+            #caja1 {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+            #caja2,#caja3 {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Elija el plan más adecuado y disfrute de nuetros servicios</h1>
+    <div id="planes">
+        <div class="plan" id="caja1">
+            <h2>Principiante</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ratione corporis saepe facilis iste explicabo ea, accusamus, quas qui quisquam autem placeat. Eveniet, tenetur deserunt ducimus fugit aliquid at animi.</p>
+            <p class="precio">1€/mes</p>
+            <a href="#">Elegir</a>
+        </div>
+        <div class="plan" id="caja2">
+            <h2>Básico</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ratione corporis saepe facilis iste explicabo ea, accusamus, quas qui quisquam autem placeat. Eveniet, tenetur deserunt ducimus fugit aliquid at animi.</p>
+            <p class="precio">10€/mes</p>
+            <a href="#">Elegir</a>
+        </div>
+        <div class="plan" id="caja3">
+            <h2>Profecional</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae ratione corporis saepe facilis iste explicabo ea, accusamus, quas qui quisquam autem placeat. Eveniet, tenetur deserunt ducimus fugit aliquid at animi.</p>
+            <p class="precio">25€/mes</p>
+            <a href="#">Elegir</a>
+        </div>
+    </div>
+</body>
+</html>
